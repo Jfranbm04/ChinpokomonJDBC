@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F51B5"
+    tools:context=".tiendaChinpokomon">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="81dp"
+                android:autoText="false"
+                android:background="#FFEB3B"
+                android:paddingTop="20dp"
+                android:text="@string/tienda_oficial"
+                android:textAlignment="center"
+                android:textColor="#3F51B5"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="Deprecated,MissingConstraints,TextViewEdits" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="256dp"
+                android:layout_height="377dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="60dp"
+                android:contentDescription="@string/carta1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7"
+                app:srcCompat="@drawable/carta1"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="252dp"
+                android:layout_height="377dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/carta2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7"
+                app:srcCompat="@drawable/carta2"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="251dp"
+                android:layout_height="401dp"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/carta3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView11"
+                app:srcCompat="@drawable/carta4" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="251dp"
+                android:layout_height="461dp"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/carta4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView8"
+                app:srcCompat="@drawable/carta3" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="251dp"
+                android:layout_height="356dp"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/carta5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView10"
+                app:srcCompat="@drawable/carta5" />
+
+            <TextView
+                android:id="@+id/chuchuNezumi"
+                android:layout_width="118dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="260dp"
+                android:layout_marginEnd="8dp"
+                android:background="#FFEB3B"
+                android:paddingTop="10dp"
+                android:text="@string/chu_chu_nezumi_0_10"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintTop_toBottomOf="@+id/textView7"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/Pengin"
+                android:layout_width="118dp"
+                android:layout_height="66dp"
+                android:layout_marginTop="300dp"
+                android:background="#FFEB3B"
+                android:paddingTop="10dp"
+                android:text="@string/pengin_1_00"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView8"
+                app:layout_constraintTop_toBottomOf="@+id/chuchuNezumi"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/Fatdactyl"
+                android:layout_width="118dp"
+                android:layout_height="66dp"
+                android:layout_marginTop="400dp"
+                android:background="#FFEB3B"
+                android:paddingTop="10dp"
+                android:text="@string/fatdactyl_5_00"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView10"
+                app:layout_constraintTop_toBottomOf="@+id/Pengin" />
+
+            <TextView
+                android:id="@+id/Shoe"
+                android:layout_width="118dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginEnd="8dp"
+                android:background="#FFEB3B"
+                android:paddingTop="10dp"
+                android:text="@string/shoe_1000_00"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView11"
+                app:layout_constraintTop_toBottomOf="@+id/Fatdactyl" />
+
+            <TextView
+                android:id="@+id/Velocirapstar"
+                android:layout_width="118dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginEnd="8dp"
+                android:background="#FFEB3B"
+                android:paddingTop="10dp"
+                android:text="@string/velocirapstar_agotado"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toBottomOf="@+id/Shoe"
+                tools:ignore="TextSizeCheck" />
+
+            <CheckBox
+                android:id="@+id/compra1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/chuchu_nezumi_0_10"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+            <CheckBox
+                android:id="@+id/compra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/pengin_100"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/compra1" />
+
+            <CheckBox
+                android:id="@+id/compra3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/fatactyl_5_00"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/compra" />
+
+            <CheckBox
+                android:id="@+id/compra2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/shoe_1000"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/compra3" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/precioTotal"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="31dp"
+                android:paddingStart="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="@string/editar_fecha_de_entrega"
+                android:textAlignment="center"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider6"
+                tools:ignore="MissingConstraints,RtlSymmetry" />
+
+            <Button
+                android:id="@+id/btDatePicker"
+                android:layout_width="191dp"
+                android:layout_height="63dp"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="110dp"
+                android:backgroundTint="#FFEB3B"
+                android:onClick="mostrarDatePicker"
+                android:text="@string/elegir_fecha"
+                android:textColor="#3F51B5"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                tools:ignore="MissingConstraints,UnknownIdInLayout" />
+
+            <TextView
+                android:id="@+id/txtFecha"
+                android:layout_width="313dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="118dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="118dp"
+                android:background="#FFEB3B"
+                android:textAlignment="center"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btDatePicker"
+                tools:ignore="TextSizeCheck" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="17dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFecha"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="@string/editar_hora_de_entrega"
+                android:textAlignment="center"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider5"
+                tools:ignore="MissingConstraints,RtlSymmetry" />
+
+            <Button
+                android:id="@+id/btTimePicker"
+                android:layout_width="191dp"
+                android:layout_height="63dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#FFEB3B"
+                android:onClick="mostrarTimePicker"
+                android:text="@string/elegir_hora"
+                android:textColor="#3F51B5"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                tools:ignore="MissingConstraints,UnknownIdInLayout" />
+
+            <TextView
+                android:id="@+id/txtHora"
+                android:layout_width="313dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="49dp"
+                android:background="#FFEB3B"
+                android:textAlignment="center"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btTimePicker"
+                tools:ignore="MissingConstraints,TextSizeCheck" />
+
+            <Button
+                android:id="@+id/btVolver3"
+                android:layout_width="117dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FFEB3B"
+                android:onClick="volver"
+                android:text="@string/volver"
+                android:textColor="#3F51B5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btComprar"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="MissingConstraints,UnknownIdInLayout" />
+
+            <Button
+                android:id="@+id/btComprar"
+                android:layout_width="378dp"
+                android:layout_height="84dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#CA0303"
+                android:onClick="comprar"
+                android:text="@string/comprar2"
+                android:textColor="#FFEB3B"
+                android:textSize="48sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtHora"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/precioTotal"
+                android:layout_width="250dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="24dp"
+                android:background="#FFEB3B"
+                android:paddingTop="15dp"
+                android:text="@string/precio_total"
+                android:textAlignment="center"
+                android:textColor="#3F51B5"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/compra2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

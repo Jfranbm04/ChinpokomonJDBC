@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#3F51B5"
+    tools:context=".crearChinpokomon">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="412dp"
+                android:layout_height="81dp"
+                android:autoText="false"
+                android:background="#FFEB3B"
+                android:paddingTop="20dp"
+                android:text="@string/crea_tu_chinpokomon"
+                android:textAlignment="center"
+                android:textColor="#3F51B5"
+                android:textSize="30sp"
+                tools:ignore="Deprecated,MissingConstraints,TextSizeCheck,TextViewEdits,UnknownIdInLayout" />
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/nombre_de_tu_chinpokomon"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:paddingTop="40dp"
+                android:textAlignment="center"
+                android:textColor="#FFEB3B"
+                android:textColorHint="#F48FB1"
+                android:textSize="24sp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="@string/tipo_de_tu_chinpokomon"
+                android:textAlignment="center"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp"
+                tools:ignore="RtlSymmetry" />
+
+            <Spinner
+                android:id="@+id/spTipo"
+                android:layout_width="317dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="50dp"
+                android:backgroundTint="#FFEB3B"
+                android:textAlignment="center" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="@string/dise_o_de_tu_chinpokomon"
+                android:textAlignment="center"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/imgDiseño"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imgDiseño"
+                android:onClick="cambiarImagen"
+                app:srcCompat="@drawable/imagen1"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="@string/movimiento_de_tu_chinpokomon"
+                android:textAlignment="center"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp"
+                tools:ignore="RtlSymmetry" />
+
+            <RadioGroup
+                android:id="@+id/Movimientos1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="150dp"
+                android:layout_marginBottom="30dp"
+                android:baselineAligned="false">
+
+                <RadioButton
+                    android:id="@+id/opcion1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/morder"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+                <RadioButton
+                    android:id="@+id/opcion2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/patear"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+                <RadioButton
+                    android:id="@+id/opcion3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pegar_tiros"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+                <RadioButton
+                    android:id="@+id/opcion4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dormir"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+                <RadioButton
+                    android:id="@+id/opcion5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+                <RadioButton
+                    android:id="@+id/opcion6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/incinerar"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+                <RadioButton
+                    android:id="@+id/opcion8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cantar_flamenco"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+                <RadioButton
+                    android:id="@+id/opcion7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reconquistar_gibraltar"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/opcion_negra_shiny"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btEnviarResultados"
+                android:layout_width="match_parent"
+                android:layout_height="77dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FFEB3B"
+                android:onClick="enviarResultados"
+                android:text="@string/enviar_resultados"
+                android:textColor="#3F51B5"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/btVolver5"
+                android:layout_width="119dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#FFEB3B"
+                android:onClick="volver"
+                android:text="@string/volver"
+                android:textColor="#3F51B5"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

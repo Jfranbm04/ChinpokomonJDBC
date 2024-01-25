@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "178870345732",
+    "project_id": "chinpokomon-c63d9",
+    "storage_bucket": "chinpokomon-c63d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178870345732:android:a4cbf9e42ab0e1db4d9551",
+        "android_client_info": {
+          "package_name": "com.example.trabajo01_multimedia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLzCh_AMdqmMIDZFly7nowu0MzuioClnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

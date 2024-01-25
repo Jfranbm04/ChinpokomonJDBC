@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F51B5"
+    tools:context=".Coleccion">
+
+    <Button
+        android:id="@+id/btVolver2"
+        android:layout_width="117dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFEB3B"
+        android:onClick="volver"
+        android:text="@string/volver"
+        android:textColor="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="876dp"
+        android:layout_height="658dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pez"
+        android:contentDescription="@string/PEZ"
+        tools:ignore="VisualLintBounds" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="176dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/pipsa_sin_gluten"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/edt_login_email"
+        android:layout_width="282dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="100dp"
+        android:autofillHints=""
+        android:background="#FFEB3B"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="text"
+        android:text="a@a.com"
+        android:textColorHint="#3F51B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/edt_login_password"
+        android:layout_width="281dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="28dp"
+        android:autofillHints=""
+        android:background="#FFEB3B"
+        android:ems="10"
+        android:hint="@string/contrase_a"
+        android:inputType="text"
+        android:text="123456"
+        android:textColorHint="#3F51B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_login_email" />
+
+    <Button
+        android:id="@+id/bt_registrarse"
+        android:layout_width="138dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="300dp"
+        android:backgroundTint="#FFEB3B"
+        android:onClick="registrarse"
+        android:text="@string/registrar"
+        android:textColor="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_login_password"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="138dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="300dp"
+        android:backgroundTint="#FFEB3B"
+        android:onClick="entrar"
+        android:text="@string/acceder"
+        android:textColor="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_login_password"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
