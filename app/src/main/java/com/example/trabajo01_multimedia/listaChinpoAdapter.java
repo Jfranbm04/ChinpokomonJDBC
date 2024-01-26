@@ -101,10 +101,11 @@ public class listaChinpoAdapter extends RecyclerView.Adapter<ViewHolderChinpokom
                     @Override
                     public void onResponse(String response) {
                         try {
+                            Log.d("Jorge tontito", "Response: " + response);
 
                             JSONObject jsonObject = new JSONObject(response);
                             String exito=jsonObject.getString("exito");
-                            JSONArray jsonArray =jsonObject.getJSONArray("listaChinpokomonFotos");
+                            JSONArray jsonArray =jsonObject.getJSONArray("chinpokomon_fotos");
                             if (exito.equals("1")){
                                 int cuantos = jsonArray.length();
                                 if (cuantos > 0) {

@@ -27,9 +27,9 @@ import java.util.Map;
 
 public class Coleccion extends AppCompatActivity {
 
-    public static final String EMAIL_KEY = "es.joselg.ejemplo1mysql2324.mainactivity.email" ;
-    public static final String PASSWORD_KEY = "es.joselg.ejemplo1mysql2324.mainactivity.password" ;
-    public static final String SHARED_PREFS ="es.joselg.ejemplo1mysql2324.mainactivity.shared_prefs" ; ;
+    public static final String EMAIL_KEY = "com.example.trabajo01_multimedia.coleccion.email" ;
+    public static final String PASSWORD_KEY = "com.example.trabajo01_multimedia.coleccion.password" ;
+    public static final String SHARED_PREFS ="com.example.trabajo01_multimedia.coleccion.shared_prefs" ; ;
     // FirebaseDatabase database;
     EditText edt_login_email;
     EditText edt_login_password;

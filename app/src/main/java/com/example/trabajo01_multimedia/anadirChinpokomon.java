@@ -89,7 +89,7 @@ public class anadirChinpokomon extends AppCompatActivity {
 
     //-----------------------------------------------------------------------------------------------------------------
 
-    private void insertarProductodb(Chinpokomon c1) {
+    public void insertarProductodb(Chinpokomon c1) {
         StringRequest request =new StringRequest(Request.Method.POST, ConfiguracionDB.DIRECCION_URL_RAIZ + "/insertar_.php",
                 new Response.Listener<String>() {
                     @Override
@@ -131,7 +131,7 @@ public class anadirChinpokomon extends AppCompatActivity {
 
     //-----------------------------------------------------------------------------------------------------------------
 
-    private void insertarFotodb(String idProducto, ImageView imgNuevopFoto) {
+    public void insertarFotodb(String idProducto, ImageView imgNuevopFoto) {
         try{
             StringRequest request =new StringRequest(Request.Method.POST, ConfiguracionDB.DIRECCION_URL_RAIZ + "/insertar_foto.php",
                     new Response.Listener<String>() {

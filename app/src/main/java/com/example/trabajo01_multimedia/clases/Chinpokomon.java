@@ -10,6 +10,9 @@ public class Chinpokomon implements Serializable{
     private String movimiento;
 
 
+    public Chinpokomon() {
+
+    }
     public Chinpokomon(int codigo, String nombre, int nivel, String tipo, String movimiento) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -17,6 +20,8 @@ public class Chinpokomon implements Serializable{
         this.tipo = tipo;
         this.movimiento = movimiento;
     }
+
+
 
     public String getCodigo() {
         return ""+codigo;

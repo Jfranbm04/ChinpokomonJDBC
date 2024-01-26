@@ -55,25 +55,11 @@
             app:layout_constraintStart_toEndOf="@+id/txtBuscar"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btAñadir2"
-            android:layout_width="81dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="89dp"
-            android:backgroundTint="#FFEB3B"
-            android:onClick="borrar"
-            android:text="@string/brrar"
-            android:textColor="#3F51B5"
-            android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/btAñadir"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <EditText
             android:id="@+id/txtBuscar"
-            android:layout_width="82dp"
+            android:layout_width="160dp"
             android:layout_height="48dp"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="92dp"
             android:autofillHints=""
             android:background="#FFC107"
@@ -83,14 +69,17 @@
             android:onClick="buscarProductos"
             android:textAlignment="center"
             android:textColorHint="#6D4C41"
-            app:layout_constraintStart_toEndOf="@+id/btAñadir2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/btAñadir"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="417dp"
         android:layout_height="516dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,6 +92,7 @@
         android:id="@+id/btCerrarSesion"
         android:layout_width="410dp"
         android:layout_height="66dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#FFEB3B"
         android:backgroundTintMode="add"
         android:onClick="volver"
