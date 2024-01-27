@@ -197,11 +197,6 @@ public class DatosUsuario extends AppCompatActivity {
 
 
 
-
-
-
-
-
     // Método para volver al main
     public void volver (View view){
         Intent anterior = new Intent(this, Coleccion.class);

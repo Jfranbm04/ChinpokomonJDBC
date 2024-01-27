@@ -2,11 +2,11 @@
 
 include 'conexion.php';
 
-$idProducto =$_POST['idProducto'];
-$foto=$_POST['foto'];
+$idProducto =$_POST['codigo'];
+$foto=$_POST['imagen'];
 
 
-$query ="UPDATE productos_fotos SET foto ='$foto' WHERE idProducto LIKE '$idProducto'";
+$query ="UPDATE chinpokomon_fotos SET imagen ='$imagen' WHERE codigo LIKE '$codigo'";
 
 $resultado =mysqli_query($conexion,$query);
 

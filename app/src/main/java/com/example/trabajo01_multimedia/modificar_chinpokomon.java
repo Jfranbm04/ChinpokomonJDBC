@@ -2,9 +2,12 @@ package com.example.trabajo01_multimedia;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,6 +25,7 @@ import com.example.trabajo01_multimedia.clases.Chinpokomon;
 import com.example.trabajo01_multimedia.clases.ConfiguracionDB;
 import com.example.trabajo01_multimedia.utilidades.ImagenesBlobBitmap;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +35,9 @@ public class modificar_chinpokomon extends AppCompatActivity {
     anadirChinpokomon ac = new anadirChinpokomon();
     EditText codigoView, nombreView, nivelView, tipoView, movimientoView;
     ImageView imagen;
+    public static final int NUEVA_IMAGEN = 1;
+    Uri imagen_seleccionada = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +95,7 @@ public class modificar_chinpokomon extends AppCompatActivity {
                     public void onResponse(String response) {
                         if (response.equalsIgnoreCase("datos eliminados")) {
                             Toast.makeText(modificar_chinpokomon.this, "datos eliminados", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), DatosUsuario.class));
                             finish();
                         } else {
                             Toast.makeText(modificar_chinpokomon.this, "Error no se puede eliminar el dato", Toast.LENGTH_SHORT).show();
@@ -150,7 +157,7 @@ public class modificar_chinpokomon extends AppCompatActivity {
     //---------------------------------------------------
     public void editar_producto(View view)
     {
-        int codigo = Integer.valueOf(String.valueOf(codigoView.getText()));
+        int codigo = Integer.parseInt(String.valueOf(codigoView.getText()));
         String nombre = String.valueOf(nombreView.getText());
         int nivel = Integer.valueOf(String.valueOf(nivelView.getText()));
         String tipo = String.valueOf(String.valueOf(tipoView.getText()));
@@ -158,7 +165,7 @@ public class modificar_chinpokomon extends AppCompatActivity {
 
         Chinpokomon c1 = new Chinpokomon(codigo,nombre,nivel,tipo, movimiento);
 
-        if(imagen != null) {
+        if(imagen_seleccionada != null) {
             borrar_fotodb(c.getCodigo());
             ac.insertarFotodb(c.getCodigo(),imagen);
 
@@ -176,7 +183,7 @@ public class modificar_chinpokomon extends AppCompatActivity {
                     public void onResponse(String response) {
                         if (response.equalsIgnoreCase("datos actualizados")) {
                             Toast.makeText(modificar_chinpokomon.this, "actualizado correctamente", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), DatosUsuario.class));
                             finish();
                         } else {
                             Toast.makeText(modificar_chinpokomon.this, "Error no se puede actualizar", Toast.LENGTH_SHORT).show();
@@ -244,7 +251,35 @@ public class modificar_chinpokomon extends AppCompatActivity {
         requestQueue.add(request);
     }
     //--------------------------------------------------------------------------
+//--------CODIGO PARA CAMBIAR LA IMAGEN----------------
 
+    public void cambiar_imagen(View view) {
+        Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+        getIntent.setType("image/*");
 
+        Intent pickIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        pickIntent.setType("image/*");
 
+        Intent chooserIntent = Intent.createChooser(getIntent, "Selecciona una imagen");
+        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
+        startActivityForResult(chooserIntent, NUEVA_IMAGEN);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == NUEVA_IMAGEN && resultCode == Activity.RESULT_OK) {
+            imagen_seleccionada = data.getData();
+            Bitmap bitmap = null;
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imagen_seleccionada);
+                imagen.setImageBitmap(bitmap);
+
+                //---------------------------------------------
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

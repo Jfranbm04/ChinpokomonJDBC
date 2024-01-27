@@ -34,11 +34,13 @@ public class listaChinpoAdapter extends RecyclerView.Adapter<ViewHolderChinpokom
 
     Context context;
     List<Chinpokomon> listaChinpokomon;
+    private LayoutInflater inflate = null;
 
 
     public listaChinpoAdapter(Context context, List<Chinpokomon> listaChinpokomon) {
         this.context = context;
         this.listaChinpokomon = listaChinpokomon;
+        inflate =  LayoutInflater.from(this.context);
     }
 
     public Context getContext() {
@@ -59,7 +61,9 @@ public class listaChinpoAdapter extends RecyclerView.Adapter<ViewHolderChinpokom
     @NonNull
     @Override
     public ViewHolderChinpokomon onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolderChinpokomon(LayoutInflater.from(context).inflate(R.layout.item_chinpokomon,parent,false));
+        View mItemView = inflate.inflate(R.layout.item_chinpokomon,parent,false);
+        ViewHolderChinpokomon vhc = new ViewHolderChinpokomon(mItemView,this);
+        return vhc;
     }
 
 

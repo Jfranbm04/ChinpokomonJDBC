@@ -26,7 +26,7 @@ public class ViewHolderChinpokomon extends RecyclerView.ViewHolder implements Vi
     listaChinpoAdapter lca;
 
 
-    public ViewHolderChinpokomon(@NonNull View itemView) {
+    public ViewHolderChinpokomon(@NonNull View itemView, listaChinpoAdapter listaChinpoAdapter) {
         super(itemView);
         imageView = itemView.findViewById(R.id.imgChinpokomon);
 
@@ -35,6 +35,9 @@ public class ViewHolderChinpokomon extends RecyclerView.ViewHolder implements Vi
         nivelView = itemView.findViewById(R.id.txtNivel);
         tipoView = itemView.findViewById(R.id.txtTipo);
         movimientoView = itemView.findViewById(R.id.txtMovimiento);
+
+        lca = listaChinpoAdapter;
+        itemView.setOnClickListener(this);
     }
 
     public ImageView getImageView() {
@@ -63,6 +66,7 @@ public class ViewHolderChinpokomon extends RecyclerView.ViewHolder implements Vi
         //  ((MostrarProductosActivity)lpa.getContexto()).finish();
 
     }
+
 
 
 

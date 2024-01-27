@@ -2,8 +2,8 @@
 
 include 'conexion.php';
 
-$idProducto = $_POST["idProducto"];
-$query = "DELETE FROM productos_fotos WHERE idProducto LIKE '$idProducto'";
+$codigo = $_POST["codigo"];
+$query = "DELETE FROM chinpokomon_fotos WHERE codigo LIKE '$codigo'";
 $result=mysqli_query($conexion,$query);
 if($result){
     echo "datos eliminados";

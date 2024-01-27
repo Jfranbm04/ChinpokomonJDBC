@@ -27,12 +27,12 @@
             android:id="@+id/imgChinpokomon"
             android:layout_width="wrap_content"
             android:layout_height="190dp"
+            android:contentDescription="@string/imagenRecycler"
             android:paddingStart="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView21"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/imagenRecycler"
             tools:ignore="RtlSymmetry" />
 
         <TextView
