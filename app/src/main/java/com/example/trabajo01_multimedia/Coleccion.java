@@ -1,15 +1,12 @@
 package com.example.trabajo01_multimedia;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,7 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.trabajo01_multimedia.clases.ConfiguracionDB;
+import Modelo.ConfiguracionDB;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -47,8 +44,11 @@ public class Coleccion extends AppCompatActivity {
 
     }
 
-    public void entrar(View view)
-    {
+    public void entrar(View view) {
+        Toast.makeText(Coleccion.this, "Has iniciado sesión", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), DatosUsuario.class));
+
+        /*
         String email = String.valueOf(edt_login_email.getText());
         String password = String.valueOf(edt_login_password.getText());
         //-----------------------------------
@@ -88,8 +88,17 @@ public class Coleccion extends AppCompatActivity {
         requestQueue.add(request);
     }
 
+
+
+         */
+    }
+
+
     public void registrarse(View view)
     {
+        Toast.makeText(getApplicationContext(), "se ha registrado correctamente", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), DatosUsuario.class));
+        /*
         String email = String.valueOf(edt_login_email.getText());
         String password = String.valueOf(edt_login_password.getText());
         //-----------------------------------
@@ -128,7 +137,12 @@ public class Coleccion extends AppCompatActivity {
         };
         RequestQueue requestQueue = Volley.newRequestQueue(Coleccion.this);
         requestQueue.add(request);
+    */
     }
+
+
+
+
     // Método para volver al main
     public void volver (View view){
         Intent anterior = new Intent(this, MainActivity.class);

@@ -3,6 +3,7 @@ package com.example.trabajo01_multimedia;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -22,7 +23,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.trabajo01_multimedia.clases.Chinpokomon;
-import com.example.trabajo01_multimedia.clases.ConfiguracionDB;
+
+import Controladores.ChinpokomonController;
+import Modelo.ConfiguracionDB;
 import com.example.trabajo01_multimedia.utilidades.ImagenesBlobBitmap;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -69,17 +72,23 @@ public class anadirChinpokomon extends AppCompatActivity {
             String tipo = String.valueOf(tipoView.getText()).trim();
             String movimiento = String.valueOf(movimientoView.getText()).trim();
 
-            Chinpokomon c1 = new Chinpokomon(id, nombre, nivel, tipo, movimiento);
             //------------------------------------------------------------------------
-            insertarProductodb(c1);
+            Chinpokomon c1 = new Chinpokomon(id, nombre, nivel, tipo, movimiento);
+            boolean insercionOK = ChinpokomonController.insertarChinpo(c1);
+            //------------------------------------------------------------------------
+
 
             //---------------------- codigo para añadir la foto al MYSQL ------------------------------
+            /*
             Toast.makeText(this, "Codigo del chinpoko: "+c1.getCodigo(), Toast.LENGTH_SHORT).show();
             if (imagen_seleccionada != null) {
-                insertarFotodb(c1.getCodigo(), imageAñadirView);
+                insertarFotodb(String.valueOf(c1.getCodigo()), imageAñadirView);
                 // insertarFotodb(String.valueOf(c1.getCodigo()), imageAñadirView);
                 // insertarFotodb(id, imageAñadirView);
             }
+
+
+            */
         }catch(Exception e){
             e.printStackTrace();
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -87,6 +96,57 @@ public class anadirChinpokomon extends AppCompatActivity {
 
     }
 
+
+    /*
+    public void insertarFotodb(String idProducto, ImageView imgNuevopFoto) {
+        try{
+            StringRequest request =new StringRequest(Request.Method.POST, ConfiguracionDB.DIRECCION_URL_RAIZ + "/insertar_foto.php",
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            if (response.equalsIgnoreCase("foto insertada")) {
+                                Toast.makeText(anadirChinpokomon.this, "imagen registrada", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), DatosUsuario.class));
+                                finish();
+                            } else {
+                                Toast.makeText(anadirChinpokomon.this, "Error no se subir la foto", Toast.LENGTH_SHORT).show();
+                                Log.i("AAAAAA", "Response: " + response);
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(anadirChinpokomon.this,error.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            }
+            ){
+
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String,String>params=new HashMap<>();
+                    params.put("codigo",idProducto);
+                    imgNuevopFoto.buildDrawingCache();
+                    Bitmap foto_bm = imgNuevopFoto.getDrawingCache();
+                    byte[] fotobytes = ImagenesBlobBitmap.bitmap_to_bytes_png(foto_bm);
+                    String fotostring = ImagenesBlobBitmap.byte_to_string(fotobytes);
+                    params.put("imagen",fotostring);
+                    return params;
+                }
+            };
+
+
+            RequestQueue requestQueue = Volley.newRequestQueue(anadirChinpokomon.this);
+            requestQueue.add(request);
+        }catch(Exception e){
+            e.printStackTrace();
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+    */
+
+
+
+    /*
     //-----------------------------------------------------------------------------------------------------------------
 
     public void insertarProductodb(Chinpokomon c1) {
@@ -176,6 +236,10 @@ public class anadirChinpokomon extends AppCompatActivity {
         }
     }
 
+
+    */
+
+
     //--------------------------------------------------------------------------
     //--------CODIGO PARA CAMBIAR LA IMAGEN----------------
     public void cambiar_imagen(View view) {
@@ -212,7 +276,7 @@ public class anadirChinpokomon extends AppCompatActivity {
 
 
 
-
+//-------------------------------------------------------------------------------------
 
 /*
     public void añadir(View view){

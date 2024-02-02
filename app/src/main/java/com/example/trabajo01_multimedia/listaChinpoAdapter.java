@@ -19,7 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.trabajo01_multimedia.clases.Chinpokomon;
-import com.example.trabajo01_multimedia.clases.ConfiguracionDB;
+import Modelo.ConfiguracionDB;
 import com.example.trabajo01_multimedia.utilidades.ImagenesBlobBitmap;
 
 import org.json.JSONArray;
@@ -79,7 +79,7 @@ public class listaChinpoAdapter extends RecyclerView.Adapter<ViewHolderChinpokom
         holder.tipoView.setText(listaChinpokomon.get(position).getTipo());
         holder.movimientoView.setText(listaChinpokomon.get(position).getMovimiento());
         // holder.imageView.setImageResource(listaChinpokomon.get(position).getImagen());
-        String codigo = c.getCodigo();
+        int codigo = c.getCodigo();
 
         cargarImagen(codigo, holder.getImageView(), context);
 
@@ -99,7 +99,7 @@ public class listaChinpoAdapter extends RecyclerView.Adapter<ViewHolderChinpokom
 
 
     //----------------------------------------------------------------------------------------------
-    private void cargarImagen(String idProducto, ImageView img_foto, Context contexto) {
+    private void cargarImagen(int idProducto, ImageView img_foto, Context contexto) {
         StringRequest request =new StringRequest(Request.Method.POST, ConfiguracionDB.DIRECCION_URL_RAIZ+ "/mostrar_foto.php",
                 new Response.Listener<String>() {
                     @Override
@@ -139,7 +139,7 @@ public class listaChinpoAdapter extends RecyclerView.Adapter<ViewHolderChinpokom
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 Map<String,String>params=new HashMap<>();
-                params.put("codigo",idProducto);
+                params.put("codigo", String.valueOf(idProducto));
                 return params;
             }
         };

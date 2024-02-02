@@ -23,8 +23,8 @@ public class Chinpokomon implements Serializable{
 
 
 
-    public String getCodigo() {
-        return ""+codigo;
+    public int getCodigo() {
+        return codigo;
     }
 
     public void setCodigo(int codigo) {
@@ -39,8 +39,8 @@ public class Chinpokomon implements Serializable{
         this.nombre = nombre;
     }
 
-    public String getNivel() {
-        return ""+nivel;
+    public int getNivel() {
+        return nivel;
     }
 
     public void setNivel(int nivel) {

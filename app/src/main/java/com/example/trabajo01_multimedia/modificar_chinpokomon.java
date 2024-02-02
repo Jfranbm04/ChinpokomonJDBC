@@ -11,7 +11,6 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -22,7 +21,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.trabajo01_multimedia.clases.Chinpokomon;
-import com.example.trabajo01_multimedia.clases.ConfiguracionDB;
+
+import Controladores.ChinpokomonController;
+import Modelo.ConfiguracionDB;
 import com.example.trabajo01_multimedia.utilidades.ImagenesBlobBitmap;
 
 import java.io.IOException;
@@ -81,6 +82,35 @@ public class modificar_chinpokomon extends AppCompatActivity {
     }
 
 
+
+
+    //---------------------------------------------------
+    public void editar_producto(View view)
+    {
+        try{
+            int codigo = Integer.parseInt(String.valueOf(codigoView.getText()));
+            String nombre = String.valueOf(nombreView.getText());
+            int nivel = Integer.valueOf(String.valueOf(nivelView.getText()));
+            String tipo = String.valueOf(String.valueOf(tipoView.getText()));
+            String movimiento = String.valueOf(movimientoView.getText());
+
+            //------------------------------------------------------------------------
+            Chinpokomon c1 = new Chinpokomon(codigo, nombre, nivel, tipo, movimiento);
+            boolean edicionOK = ChinpokomonController.actualizarChinpo(c1, codigo);
+            //------------------------------------------------------------------------
+
+        }catch(Exception e){
+        e.printStackTrace();
+        Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+    }
+
+
+
+    }
+
+    //--------------------------------------------------------------------------
+
+/*
     //----------------------------------------------------
     public void borrar_producto(View view)
     {
@@ -154,27 +184,7 @@ public class modificar_chinpokomon extends AppCompatActivity {
     }
 
 
-    //---------------------------------------------------
-    public void editar_producto(View view)
-    {
-        int codigo = Integer.parseInt(String.valueOf(codigoView.getText()));
-        String nombre = String.valueOf(nombreView.getText());
-        int nivel = Integer.valueOf(String.valueOf(nivelView.getText()));
-        String tipo = String.valueOf(String.valueOf(tipoView.getText()));
-        String movimiento = String.valueOf(movimientoView.getText());
 
-        Chinpokomon c1 = new Chinpokomon(codigo,nombre,nivel,tipo, movimiento);
-
-        if(imagen_seleccionada != null) {
-            borrar_fotodb(c.getCodigo());
-            ac.insertarFotodb(c.getCodigo(),imagen);
-
-        }
-        editar_productodb(c1);
-
-    }
-
-    //--------------------------------------------------------------------------
 
     private void editar_productodb(Chinpokomon c1) {
         StringRequest request =new StringRequest(Request.Method.POST, ConfiguracionDB.DIRECCION_URL_RAIZ + "/actualizar_.php",
@@ -213,6 +223,8 @@ public class modificar_chinpokomon extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(modificar_chinpokomon.this);
         requestQueue.add(request);
     }
+
+
     private void editar_fotodb(Chinpokomon c1, ImageView img_detalles_imagenp) {
         StringRequest request =new StringRequest(Request.Method.POST, ConfiguracionDB.DIRECCION_URL_RAIZ + "/actualizar_foto.php",
                 new Response.Listener<String>() {
@@ -250,6 +262,11 @@ public class modificar_chinpokomon extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(modificar_chinpokomon.this);
         requestQueue.add(request);
     }
+
+    */
+
+
+
     //--------------------------------------------------------------------------
 //--------CODIGO PARA CAMBIAR LA IMAGEN----------------
 

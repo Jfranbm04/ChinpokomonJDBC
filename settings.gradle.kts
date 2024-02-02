@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Trabajo01_Multimedia"
+rootProject.name = "Chinpokomon_JDBC"
 include(":app")
  

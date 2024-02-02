@@ -21,7 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.trabajo01_multimedia.clases.Chinpokomon;
-import com.example.trabajo01_multimedia.clases.ConfiguracionDB;
+import Modelo.ConfiguracionDB;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -89,7 +89,9 @@ public class DatosUsuario extends AppCompatActivity {
                     public void onResponse(String response) {
                         listaChinpokomon.clear();
                         try {
-
+                            chinpoAdapter.setListaChinpokomon(listaChinpokomon);
+                            chinpoAdapter.notifyDataSetChanged();
+                           /*
                             Log.d("JSONResponse", "Response: " + response);
 
                             JSONObject jsonObject = new JSONObject(response);
@@ -112,6 +114,8 @@ public class DatosUsuario extends AppCompatActivity {
                                 }
                                 chinpoAdapter.setListaChinpokomon(listaChinpokomon);
                                 chinpoAdapter.notifyDataSetChanged();
+
+                           */
                             }
                         }
                         catch (JSONException ex) {
